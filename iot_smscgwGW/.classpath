@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="lib/http/commons-codec-1.3.jar"/>
+	<classpathentry kind="lib" path="lib/http/commons-httpclient-3.1.jar"/>
+	<classpathentry kind="lib" path="lib/http/httpclient-4.0-beta2.jar"/>
+	<classpathentry kind="lib" path="lib/http/httpcore-4.0.jar"/>
+	<classpathentry kind="lib" path="lib/http/httpcore-nio-4.0.jar"/>
+	<classpathentry kind="lib" path="lib/http/httpmime-4.0-beta2.jar"/>
+	<classpathentry kind="lib" path="lib/jms/activemq-core-5.2.0.jar"/>
+	<classpathentry kind="lib" path="lib/jms/geronimo-j2ee-management_1.0_spec-1.0.jar"/>
+	<classpathentry kind="lib" path="lib/jms/geronimo-jms_1.1_spec-1.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/log4j/log4j-1.2.14.jar"/>
+	<classpathentry kind="lib" path="lib/smpp/jsr173_1.0_api.jar"/>
+	<classpathentry kind="lib" path="lib/smpp/smpp.jar" sourcepath="D:/Backup/桌面/smpp.src"/>
+	<classpathentry kind="lib" path="lib/smpp/SMPPServerConfigXML.jar"/>
+	<classpathentry kind="lib" path="lib/smpp/xbean.jar"/>
+	<classpathentry kind="lib" path="lib/wd/DESTool.jar"/>
+	<classpathentry kind="lib" path="lib/xml/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="lib/wd/wdcoder-jdk15-1.3.1.jar"/>
+	<classpathentry kind="lib" path="lib/log4j/commons-logging-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/json/json-lib-2.4-jdk15.jar"/>
+	<classpathentry kind="lib" path="lib/json/ezmorph-1.0.6.jar"/>
+	<classpathentry kind="lib" path="lib/json/commons-lang.jar"/>
+	<classpathentry kind="lib" path="lib/json/commons-collections-3.2.jar"/>
+	<classpathentry kind="lib" path="lib/json/commons-beanutils-1.8.3.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="lib/jms/mqBean.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/alarm/alarm.jar"/>
+	<classpathentry kind="lib" path="lib/db/satota-dao-1.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

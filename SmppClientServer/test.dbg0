@@ -1,0 +1,3 @@
+00:34:42    main: SMPPTest.SMPPTest.submit() entered
+00:35:02    main: SMPPTest.SMPPTest.submit() Submit operation failed. org.smpp.pdu.WrongDateFormatException: Date must be either null or of format YYMMDDhhmmsstnnp and not 1.
+00:35:02    main: SMPPTest.SMPPTest.submit() exited

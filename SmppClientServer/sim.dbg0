@@ -1,0 +1,71 @@
+01:09:53 main: main() trace group 3 deactivated
+01:09:53 main: main() trace group 6 deactivated
+01:09:53 main: main() trace group 8 deactivated
+01:09:53 main: main() trace group 18 deactivated
+01:09:53 main: main() simulator started
+01:10:01    main: DeliveryInfoSender.start() entered
+01:10:01    DlvrInfoSender-1: DeliveryInfoSender.run() entered
+01:10:01    main: DeliveryInfoSender.start() exited
+01:10:01    main: main() going to parse from input stream
+01:10:01    main: main() got comment line # This is an example of user definition file used to authenticate bounding ESME.
+01:10:01    main: main() got comment line # User consists from attributes, each attribute is on one line,
+01:10:01    main: main() got comment line # each attribute has key and value; users are delimited by one or more
+01:10:01    main: main() got comment line # consecutive blank lines - next user is started by the next attribute after
+01:10:01    main: main() got comment line # first occurence of blank line.
+01:10:01    main: main() got comment line # Comment line can appear anywhere and it's ignored => it can't delimit
+01:10:01    main: main() got comment line # two users.
+01:10:01    main: main() got comment line # Format of attribute is <name>"="<value>
+01:10:01    main: main() got comment line #
+01:10:01    main: main() got comment line # The name and password attributes are compulsory for each user definition
+01:10:01    main: main() got comment line # as they are compared to the system_id and password parameters
+01:10:01    main: main() got comment line # in the incoming bound PDU.
+01:10:01    main: main() got comment line #
+01:10:01    main: main() got comment line # Note that timeout and bound attributes below are just exampples
+01:10:01    main: main() got comment line # of additional attributes and aren't really used by the simulator :-)
+01:10:01    main: main() got comment line # (future expansion?)
+01:10:01    main: main() got comment line # Also note that whitespaces aren't removed from neither attribute name
+01:10:01    main: main() got comment line # and it's value, i.e. "name=peter" and "name= peter" define two different users,
+01:10:01    main: main() got comment line # "peter" and " peter".
+01:10:01    main: main() got empty line
+01:10:01    main: main() got empty line
+01:10:01    main: main() got comment line # Pavel can bound for unlimited time as any type
+01:10:01    main: main() going to parse attribute name=pavel
+01:10:01    main: main() going to parse attribute password=dfsew
+01:10:01    main: main() going to parse attribute timeout=unlimited
+01:10:01    main: main() got empty line
+01:10:01    main: main() finished record, adding to table
+01:10:01    main: main() got empty line
+01:10:01    main: main() got comment line # Jorge has time limited to 10, then the connection is dropped
+01:10:01    main: main() got comment line # if enquire is unsuccessfull
+01:10:01    main: main() got comment line # Also, Jorge can connect only as triansmitter or receiver, he can't
+01:10:01    main: main() got comment line # connect as transciever
+01:10:01    main: main() got empty line
+01:10:01    main: main() going to parse attribute name=jorge
+01:10:01    main: main() going to parse attribute password=prtgljrg
+01:10:01    main: main() got comment line # And this timeout is in minutes, bad luck, jorge %^)
+01:10:01    main: main() going to parse attribute timout=5
+01:10:01    main: main() going to parse attribute bound=t,r
+01:10:01    main: main() got empty line
+01:10:01    main: main() finished record, adding to table
+01:10:01    main: main() got comment line # And another users
+01:10:01    main: main() going to parse attribute name=hugo
+01:10:01    main: main() going to parse attribute password=ggoohu
+01:10:01    main: main() got empty line
+01:10:01    main: main() finished record, adding to table
+01:10:01    main: main() got comment line # that's all folks
+01:10:01    main: main() going to parse attribute name=DAMIEN
+01:10:01    main: main() going to parse attribute password=neimad
+01:10:01    main: main() got empty line
+01:10:01    main: main() finished record, adding to table
+01:10:01    main: main() got comment line #yuliang
+01:10:01    main: main() going to parse attribute name=yuliang
+01:10:01    main: main() going to parse attribute password=yuliang
+01:10:01    main: main() got empty line
+01:10:01    main: main() finished record, adding to table
+01:10:01    main: main() going to start SMSCListener on port 8854
+01:10:01       main: TCPIPConnection.open entered
+01:10:01       main: TCPIPConnection.open listening tcp/ip on port 8854 (7)
+01:10:01       main: TCPIPConnection.open exited
+01:10:01    main: main() starting listener in separate thread.
+01:10:01    main: main() listener started in separate thread.
+01:10:01    Thread-1: SMSCListenerImpl.run of SMSCListener on port 8854 entered

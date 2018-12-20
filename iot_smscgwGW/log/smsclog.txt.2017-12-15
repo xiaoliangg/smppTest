@@ -1,0 +1,23 @@
+2017-12-15 18:02:40,113-[TS] DEBUG Thread-0 org.apache.activemq.transport.WireFormatNegotiator -: 
+ Sending: WireFormatInfo { version=3, properties={CacheSize=1024, CacheEnabled=true, SizePrefixDisabled=false, MaxInactivityDurationInitalDelay=10000, TcpNoDelayEnabled=true, MaxInactivityDuration=0, TightEncodingEnabled=true, StackTraceEnabled=true}, magic=[A,c,t,i,v,e,M,Q]}
+2017-12-15 18:02:40,120-[TS] DEBUG ActiveMQ Transport: tcp://localhost/127.0.0.1:61616 org.apache.activemq.transport.WireFormatNegotiator -: 
+ Received WireFormat: WireFormatInfo { version=3, properties={CacheSize=1024, SizePrefixDisabled=false, TcpNoDelayEnabled=true, MaxInactivityDurationInitalDelay=10000, MaxInactivityDuration=30000, CacheEnabled=true, TightEncodingEnabled=true, StackTraceEnabled=true}, magic=[A,c,t,i,v,e,M,Q]}
+2017-12-15 18:02:40,122-[TS] DEBUG ActiveMQ Transport: tcp://localhost/127.0.0.1:61616 org.apache.activemq.transport.WireFormatNegotiator -: 
+ tcp://localhost/127.0.0.1:61616 before negotiation: OpenWireFormat{version=3, cacheEnabled=false, stackTraceEnabled=false, tightEncodingEnabled=false, sizePrefixDisabled=false}
+2017-12-15 18:02:40,122-[TS] DEBUG ActiveMQ Transport: tcp://localhost/127.0.0.1:61616 org.apache.activemq.transport.WireFormatNegotiator -: 
+ tcp://localhost/127.0.0.1:61616 after negotiation: OpenWireFormat{version=3, cacheEnabled=true, stackTraceEnabled=true, tightEncodingEnabled=true, sizePrefixDisabled=false}
+2017-12-15 18:09:45,661-[TS] DEBUG ActiveMQ Transport: tcp://localhost/127.0.0.1:61616 org.apache.activemq.ActiveMQConnection -: 
+ Async exception with no exception listener: java.net.SocketException: Connection reset
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:196)
+	at java.net.SocketInputStream.read(SocketInputStream.java:122)
+	at org.apache.activemq.transport.tcp.TcpBufferedInputStream.fill(TcpBufferedInputStream.java:50)
+	at org.apache.activemq.transport.tcp.TcpBufferedInputStream.read(TcpBufferedInputStream.java:58)
+	at java.io.DataInputStream.readInt(DataInputStream.java:387)
+	at org.apache.activemq.openwire.OpenWireFormat.unmarshal(OpenWireFormat.java:269)
+	at org.apache.activemq.transport.tcp.TcpTransport.readCommand(TcpTransport.java:210)
+	at org.apache.activemq.transport.tcp.TcpTransport.doRun(TcpTransport.java:202)
+	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:185)
+	at java.lang.Thread.run(Thread.java:745)
+2017-12-15 18:09:45,677-[TS] DEBUG ActiveMQ Connection Worker: tcp://localhost/127.0.0.1:61616 org.apache.activemq.transport.tcp.TcpTransport -: 
+ Stopping transport tcp://localhost/127.0.0.1:61616

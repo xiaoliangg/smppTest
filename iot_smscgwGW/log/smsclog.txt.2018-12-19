@@ -1,0 +1,244 @@
+2018-12-19 15:47:41,175-[TS] WARN Thread-0 com.roamingServer.smscgw.smpp.SessionManager -: 
+ start bind,lock fisrt
+2018-12-19 15:47:41,175-[TS] WARN Thread-0 com.roamingServer.smscgw.smpp.SessionManager -: 
+ start bind,lock fisrt
+2018-12-19 15:47:41,206-[TS] INFO Thread-0 com.roamingServer.smscgw.smpp.SessionManager -: 
+ Bind mode:TR mode
+2018-12-19 15:47:41,206-[TS] INFO Thread-0 com.roamingServer.smscgw.smpp.SessionManager -: 
+ Bind mode:TR mode
+2018-12-19 15:47:41,217-[TS] DEBUG Thread-0 com.roamingServer.smscgw.smpp.SessionManager -: 
+ bind data hexString =00000026000000090000000000000001313131310032323232323232004f5441003401012a00
+2018-12-19 15:47:41,217-[TS] DEBUG Thread-0 com.roamingServer.smscgw.smpp.SessionManager -: 
+ bind data hexString =00000026000000090000000000000001313131310032323232323232004f5441003401012a00
+2018-12-19 15:47:42,278-[TS] ERROR Thread-0 com.roamingServer.smscgw.smpp.SessionManager -: 
+ Bind operation failed. 
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at java.net.Socket.connect(Socket.java:528)
+	at java.net.Socket.<init>(Socket.java:425)
+	at java.net.Socket.<init>(Socket.java:208)
+	at com.logica.smpp.TCPIPConnection.open(TCPIPConnection.java:255)
+	at com.logica.smpp.Session.open(Session.java:326)
+	at com.logica.smpp.Session.bind(Session.java:459)
+	at com.roamingServer.smscgw.smpp.SessionManager.bind(SessionManager.java:86)
+	at com.roamingServer.smscgw.smpp.PDUWorker.run(PDUWorker.java:49)
+	at java.lang.Thread.run(Thread.java:745)
+2018-12-19 15:47:42,278-[TS] ERROR Thread-0 com.roamingServer.smscgw.smpp.SessionManager -: 
+ Bind operation failed. 
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at java.net.Socket.connect(Socket.java:528)
+	at java.net.Socket.<init>(Socket.java:425)
+	at java.net.Socket.<init>(Socket.java:208)
+	at com.logica.smpp.TCPIPConnection.open(TCPIPConnection.java:255)
+	at com.logica.smpp.Session.open(Session.java:326)
+	at com.logica.smpp.Session.bind(Session.java:459)
+	at com.roamingServer.smscgw.smpp.SessionManager.bind(SessionManager.java:86)
+	at com.roamingServer.smscgw.smpp.PDUWorker.run(PDUWorker.java:49)
+	at java.lang.Thread.run(Thread.java:745)
+2018-12-19 15:47:43,587-[TS] DEBUG Thread-0 org.apache.activemq.transport.tcp.TcpTransport -: 
+ Stopping transport tcp://null:0
+2018-12-19 15:47:43,587-[TS] DEBUG Thread-0 org.apache.activemq.transport.tcp.TcpTransport -: 
+ Stopping transport tcp://null:0
+2018-12-19 15:47:43,588-[TS] WARN Thread-0 com.roamingServer.smscgw.smpp.SessionManager -: 
+ finish bind,unlock
+2018-12-19 15:47:43,588-[TS] WARN Thread-0 com.roamingServer.smscgw.smpp.SessionManager -: 
+ finish bind,unlock
+2018-12-19 15:48:55,416-[TS] WARN Thread-0 com.roamingServer.smscgw.smpp.SessionManager -: 
+ start bind,lock fisrt
+2018-12-19 15:48:55,416-[TS] WARN Thread-0 com.roamingServer.smscgw.smpp.SessionManager -: 
+ start bind,lock fisrt
+2018-12-19 15:48:55,465-[TS] INFO Thread-0 com.roamingServer.smscgw.smpp.SessionManager -: 
+ Bind mode:TR mode
+2018-12-19 15:48:55,465-[TS] INFO Thread-0 com.roamingServer.smscgw.smpp.SessionManager -: 
+ Bind mode:TR mode
+2018-12-19 15:48:55,473-[TS] DEBUG Thread-0 com.roamingServer.smscgw.smpp.SessionManager -: 
+ bind data hexString =00000026000000090000000000000001313131310032323232323232004f5441003401012a00
+2018-12-19 15:48:55,473-[TS] DEBUG Thread-0 com.roamingServer.smscgw.smpp.SessionManager -: 
+ bind data hexString =00000026000000090000000000000001313131310032323232323232004f5441003401012a00
+2018-12-19 15:50:11,990-[TS] ERROR Thread-0 com.roamingServer.smscgw.smpp.SessionManager -: 
+ Bind operation failed. 
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at java.net.Socket.connect(Socket.java:528)
+	at java.net.Socket.<init>(Socket.java:425)
+	at java.net.Socket.<init>(Socket.java:208)
+	at com.logica.smpp.TCPIPConnection.open(TCPIPConnection.java:255)
+	at com.logica.smpp.Session.open(Session.java:326)
+	at com.logica.smpp.Session.bind(Session.java:459)
+	at com.roamingServer.smscgw.smpp.SessionManager.bind(SessionManager.java:86)
+	at com.roamingServer.smscgw.smpp.PDUWorker.run(PDUWorker.java:49)
+	at java.lang.Thread.run(Thread.java:745)
+2018-12-19 15:50:11,990-[TS] ERROR Thread-0 com.roamingServer.smscgw.smpp.SessionManager -: 
+ Bind operation failed. 
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at java.net.Socket.connect(Socket.java:528)
+	at java.net.Socket.<init>(Socket.java:425)
+	at java.net.Socket.<init>(Socket.java:208)
+	at com.logica.smpp.TCPIPConnection.open(TCPIPConnection.java:255)
+	at com.logica.smpp.Session.open(Session.java:326)
+	at com.logica.smpp.Session.bind(Session.java:459)
+	at com.roamingServer.smscgw.smpp.SessionManager.bind(SessionManager.java:86)
+	at com.roamingServer.smscgw.smpp.PDUWorker.run(PDUWorker.java:49)
+	at java.lang.Thread.run(Thread.java:745)
+2018-12-19 15:50:20,706-[TS] DEBUG Thread-0 org.apache.activemq.transport.tcp.TcpTransport -: 
+ Stopping transport tcp://null:0
+2018-12-19 15:50:20,706-[TS] DEBUG Thread-0 org.apache.activemq.transport.tcp.TcpTransport -: 
+ Stopping transport tcp://null:0
+2018-12-19 15:50:20,709-[TS] WARN Thread-0 com.roamingServer.smscgw.smpp.SessionManager -: 
+ finish bind,unlock
+2018-12-19 15:50:20,709-[TS] WARN Thread-0 com.roamingServer.smscgw.smpp.SessionManager -: 
+ finish bind,unlock
+2018-12-19 15:59:24,133-[TS] WARN Thread-0 com.roamingServer.smscgw.smpp.SessionManager -: 
+ start bind,lock fisrt
+2018-12-19 15:59:24,133-[TS] WARN Thread-0 com.roamingServer.smscgw.smpp.SessionManager -: 
+ start bind,lock fisrt
+2018-12-19 15:59:24,180-[TS] INFO Thread-0 com.roamingServer.smscgw.smpp.SessionManager -: 
+ Bind mode:TR mode
+2018-12-19 15:59:24,180-[TS] INFO Thread-0 com.roamingServer.smscgw.smpp.SessionManager -: 
+ Bind mode:TR mode
+2018-12-19 15:59:24,186-[TS] DEBUG Thread-0 com.roamingServer.smscgw.smpp.SessionManager -: 
+ bind data hexString =00000026000000090000000000000001313131310032323232323232004f5441003401012a00
+2018-12-19 15:59:24,186-[TS] DEBUG Thread-0 com.roamingServer.smscgw.smpp.SessionManager -: 
+ bind data hexString =00000026000000090000000000000001313131310032323232323232004f5441003401012a00
+2018-12-19 15:59:28,346-[TS] ERROR Thread-0 com.roamingServer.smscgw.smpp.SessionManager -: 
+ Bind operation failed. 
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at java.net.Socket.connect(Socket.java:528)
+	at java.net.Socket.<init>(Socket.java:425)
+	at java.net.Socket.<init>(Socket.java:208)
+	at com.logica.smpp.TCPIPConnection.open(TCPIPConnection.java:255)
+	at com.logica.smpp.Session.open(Session.java:326)
+	at com.logica.smpp.Session.bind(Session.java:459)
+	at com.roamingServer.smscgw.smpp.SessionManager.bind(SessionManager.java:86)
+	at com.roamingServer.smscgw.smpp.PDUWorker.run(PDUWorker.java:49)
+	at java.lang.Thread.run(Thread.java:745)
+2018-12-19 15:59:28,346-[TS] ERROR Thread-0 com.roamingServer.smscgw.smpp.SessionManager -: 
+ Bind operation failed. 
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at java.net.Socket.connect(Socket.java:528)
+	at java.net.Socket.<init>(Socket.java:425)
+	at java.net.Socket.<init>(Socket.java:208)
+	at com.logica.smpp.TCPIPConnection.open(TCPIPConnection.java:255)
+	at com.logica.smpp.Session.open(Session.java:326)
+	at com.logica.smpp.Session.bind(Session.java:459)
+	at com.roamingServer.smscgw.smpp.SessionManager.bind(SessionManager.java:86)
+	at com.roamingServer.smscgw.smpp.PDUWorker.run(PDUWorker.java:49)
+	at java.lang.Thread.run(Thread.java:745)
+2018-12-19 15:59:50,102-[TS] WARN Thread-0 com.roamingServer.smscgw.smpp.SessionManager -: 
+ start bind,lock fisrt
+2018-12-19 15:59:50,102-[TS] WARN Thread-0 com.roamingServer.smscgw.smpp.SessionManager -: 
+ start bind,lock fisrt
+2018-12-19 15:59:50,154-[TS] INFO Thread-0 com.roamingServer.smscgw.smpp.SessionManager -: 
+ Bind mode:TR mode
+2018-12-19 15:59:50,154-[TS] INFO Thread-0 com.roamingServer.smscgw.smpp.SessionManager -: 
+ Bind mode:TR mode
+2018-12-19 15:59:50,163-[TS] DEBUG Thread-0 com.roamingServer.smscgw.smpp.SessionManager -: 
+ bind data hexString =00000026000000090000000000000001313131310032323232323232004f5441003401012a00
+2018-12-19 15:59:50,163-[TS] DEBUG Thread-0 com.roamingServer.smscgw.smpp.SessionManager -: 
+ bind data hexString =00000026000000090000000000000001313131310032323232323232004f5441003401012a00
+2018-12-19 15:59:52,056-[TS] ERROR Thread-0 com.roamingServer.smscgw.smpp.SessionManager -: 
+ Bind operation failed. 
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at java.net.Socket.connect(Socket.java:528)
+	at java.net.Socket.<init>(Socket.java:425)
+	at java.net.Socket.<init>(Socket.java:208)
+	at com.logica.smpp.TCPIPConnection.open(TCPIPConnection.java:255)
+	at com.logica.smpp.Session.open(Session.java:326)
+	at com.logica.smpp.Session.bind(Session.java:459)
+	at com.roamingServer.smscgw.smpp.SessionManager.bind(SessionManager.java:86)
+	at com.roamingServer.smscgw.smpp.PDUWorker.run(PDUWorker.java:49)
+	at java.lang.Thread.run(Thread.java:745)
+2018-12-19 15:59:52,056-[TS] ERROR Thread-0 com.roamingServer.smscgw.smpp.SessionManager -: 
+ Bind operation failed. 
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at java.net.Socket.connect(Socket.java:528)
+	at java.net.Socket.<init>(Socket.java:425)
+	at java.net.Socket.<init>(Socket.java:208)
+	at com.logica.smpp.TCPIPConnection.open(TCPIPConnection.java:255)
+	at com.logica.smpp.Session.open(Session.java:326)
+	at com.logica.smpp.Session.bind(Session.java:459)
+	at com.roamingServer.smscgw.smpp.SessionManager.bind(SessionManager.java:86)
+	at com.roamingServer.smscgw.smpp.PDUWorker.run(PDUWorker.java:49)
+	at java.lang.Thread.run(Thread.java:745)
+2018-12-19 15:59:55,882-[TS] DEBUG Thread-0 org.apache.activemq.transport.WireFormatNegotiator -: 
+ Sending: WireFormatInfo { version=3, properties={CacheSize=1024, CacheEnabled=true, SizePrefixDisabled=false, MaxInactivityDurationInitalDelay=10000, TcpNoDelayEnabled=true, MaxInactivityDuration=0, TightEncodingEnabled=true, StackTraceEnabled=true}, magic=[A,c,t,i,v,e,M,Q]}
+2018-12-19 15:59:55,882-[TS] DEBUG Thread-0 org.apache.activemq.transport.WireFormatNegotiator -: 
+ Sending: WireFormatInfo { version=3, properties={CacheSize=1024, CacheEnabled=true, SizePrefixDisabled=false, MaxInactivityDurationInitalDelay=10000, TcpNoDelayEnabled=true, MaxInactivityDuration=0, TightEncodingEnabled=true, StackTraceEnabled=true}, magic=[A,c,t,i,v,e,M,Q]}
+2018-12-19 15:59:56,062-[TS] DEBUG ActiveMQ Transport: tcp://localhost/127.0.0.1:61616 org.apache.activemq.transport.WireFormatNegotiator -: 
+ Received WireFormat: WireFormatInfo { version=3, properties={CacheSize=1024, CacheEnabled=true, SizePrefixDisabled=false, MaxInactivityDurationInitalDelay=10000, TcpNoDelayEnabled=true, MaxInactivityDuration=30000, TightEncodingEnabled=true, StackTraceEnabled=true}, magic=[A,c,t,i,v,e,M,Q]}
+2018-12-19 15:59:56,062-[TS] DEBUG ActiveMQ Transport: tcp://localhost/127.0.0.1:61616 org.apache.activemq.transport.WireFormatNegotiator -: 
+ Received WireFormat: WireFormatInfo { version=3, properties={CacheSize=1024, CacheEnabled=true, SizePrefixDisabled=false, MaxInactivityDurationInitalDelay=10000, TcpNoDelayEnabled=true, MaxInactivityDuration=30000, TightEncodingEnabled=true, StackTraceEnabled=true}, magic=[A,c,t,i,v,e,M,Q]}
+2018-12-19 15:59:56,063-[TS] DEBUG ActiveMQ Transport: tcp://localhost/127.0.0.1:61616 org.apache.activemq.transport.WireFormatNegotiator -: 
+ tcp://localhost/127.0.0.1:61616 before negotiation: OpenWireFormat{version=3, cacheEnabled=false, stackTraceEnabled=false, tightEncodingEnabled=false, sizePrefixDisabled=false}
+2018-12-19 15:59:56,063-[TS] DEBUG ActiveMQ Transport: tcp://localhost/127.0.0.1:61616 org.apache.activemq.transport.WireFormatNegotiator -: 
+ tcp://localhost/127.0.0.1:61616 before negotiation: OpenWireFormat{version=3, cacheEnabled=false, stackTraceEnabled=false, tightEncodingEnabled=false, sizePrefixDisabled=false}
+2018-12-19 15:59:56,063-[TS] DEBUG ActiveMQ Transport: tcp://localhost/127.0.0.1:61616 org.apache.activemq.transport.WireFormatNegotiator -: 
+ tcp://localhost/127.0.0.1:61616 after negotiation: OpenWireFormat{version=3, cacheEnabled=true, stackTraceEnabled=true, tightEncodingEnabled=true, sizePrefixDisabled=false}
+2018-12-19 15:59:56,063-[TS] DEBUG ActiveMQ Transport: tcp://localhost/127.0.0.1:61616 org.apache.activemq.transport.WireFormatNegotiator -: 
+ tcp://localhost/127.0.0.1:61616 after negotiation: OpenWireFormat{version=3, cacheEnabled=true, stackTraceEnabled=true, tightEncodingEnabled=true, sizePrefixDisabled=false}
+2018-12-19 15:59:56,100-[TS] WARN Thread-0 com.roamingServer.smscgw.smpp.SessionManager -: 
+ finish bind,unlock
+2018-12-19 15:59:56,100-[TS] WARN Thread-0 com.roamingServer.smscgw.smpp.SessionManager -: 
+ finish bind,unlock

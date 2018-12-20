@@ -1,0 +1,8 @@
+00:35:02 
+00:35:02 Exception: org.smpp.pdu.WrongDateFormatException: Date must be either null or of format YYMMDDhhmmsstnnp and not 1.
+	at org.smpp.pdu.ByteData.checkDate(ByteData.java:234)
+	at org.smpp.pdu.SubmitSM.setScheduleDeliveryTime(SubmitSM.java:169)
+	at org.smpp.test.SMPPTest.submit(SMPPTest.java:482)
+	at org.smpp.test.SMPPTest.menu(SMPPTest.java:274)
+	at org.smpp.test.SMPPTest.main(SMPPTest.java:235)
+

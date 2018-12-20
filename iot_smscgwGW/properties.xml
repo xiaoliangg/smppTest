@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+
+    <!-- Directory structure of the project -->
+	<property name="java.home" value="C:\Program Files\Java\jdk1.7.0_75" />
+	<property name="server.home" value="D:\SmscGW" />
+    
+</project>

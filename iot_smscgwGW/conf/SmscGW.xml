@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- <!DOCTYPE satml SYSTEM "satml106.dtd"> -->
+
+<!-- this file is mainly to adjust the performance of gateWay -->
+<SatGateWay>
+	<BaseConfig>
+			<!--  serverAddress  in connectRequest packet,defines the targeted S@T server -->
+			<!-- Application Address in  connectRequest packet,defines the originating application -->
+			<ServerAddr></ServerAddr>
+			<ApplicationAddr></ApplicationAddr>
+			<mtThreadNum>20</mtThreadNum>
+	</BaseConfig>
+	
+	<!-- queue size , thread num-->
+	<ServerConfig>
+			<SendQueueSize>3000</SendQueueSize>
+			<ReceiveQueueSize>3000</ReceiveQueueSize>
+			<Executor>
+					<CoreSize>100</CoreSize>
+					<MaxSize>300</MaxSize>
+					<ActiveTime>500</ActiveTime>
+			</Executor>
+			
+			<Session>
+					<SessionSize>10000</SessionSize>
+					<ConnectTimeout>60000</ConnectTimeout>
+					<SuspendTimeout>60000</SuspendTimeout>
+			</Session>
+			
+			<JmsThreadNum>
+					<jmsSenderNum>0</jmsSenderNum>
+					<jmsReceiverNum>10</jmsReceiverNum>
+			</JmsThreadNum>
+			
+			<InvalidateEncodeXML>false</InvalidateEncodeXML>
+			<ValidateSession>true</ValidateSession>
+	</ServerConfig>
+
+</SatGateWay>

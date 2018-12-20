@@ -1,0 +1,2 @@
+2018-01-29 10:07:15,672-[TS] DEBUG Thread-0 org.apache.activemq.transport.tcp.TcpTransport -: 
+ Stopping transport tcp://null:0

@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="deploy" basedir="." name="smsc_gw">
+	
+	<import file="properties.xml"/>
+	
+	<property name="version" value="1.0"/>
+	<property name="year" value="2017"/>
+	<property name="language" value="zh"/>
+
+	<property name="app.home" value="${basedir}" />
+
+	<property name="src.dir" value="${app.home}\src" />
+	<property name="test.dir" value="${app.home}\test" />
+	<property name="build.dir" value="${app.home}\dist" />
+	<property name="build.classes.dir" value="${build.dir}\classes" />
+
+	<property name="app.home.bin" value="${app.home}\bin" />
+	<property name="app.home.cache" value="${app.home}\cache" />
+	<property name="app.home.conf" value="${app.home}\conf" />
+	<property name="app.home.docs" value="${app.home}\docs" />
+	<property name="app.home.lib" value="${app.home}\lib" />
+	<property name="app.home.logs" value="${app.home}\logs" />
+	<property name="app.home.temp" value="${app.home}\temp" />
+
+	<property name="server.home.bin" value="${server.home}\bin" />
+	<property name="server.home.cache" value="${server.home}\cache" />
+	<property name="server.home.conf" value="${server.home}\conf" />
+	<property name="server.home.docs" value="${server.home}\docs" />
+	<property name="server.home.lib" value="${server.home}\lib" />
+	<property name="server.home.log" value="${server.home}\log" />
+	<property name="server.home.temp" value="${server.home}\temp" />
+
+	<property name="app.home.meta" value="${app.home}\conf\MANIFEST.MF" />
+	<property name="releaseNumber" value="${DSTAMP}"/>
+	
+	
+	<path id="build.classpath">
+		<fileset dir="${app.home.lib}">
+
+			<!-- wd -->
+			<include name="wd\wdcoder-jdk15-1.3.1.jar" />
+			<include name="wd\DESTool.jar" />
+				
+			<!-- smpp -->
+			<include name="smpp\smpp.jar" />
+			<include name="smpp\xbean.jar" />
+			<include name="smpp\SMPPServerConfigXML.jar" />
+			<include name="smpp\jsr173_1.0_api.jar" />
+
+			<!-- read config -->
+			<include name="xml\dom4j-1.6.1.jar" />
+
+			<!-- log4j -->
+			<include name="log4j\log4j-1.2.14.jar" />
+			<include name="log4j\commons-logging-1.1.jar" />
+			
+
+			<!-- http -->
+			<include name="http\httpcore-4.0.jar" />
+			<include name="http\httpcore-nio-4.0.jar" />
+			<include name="http\httpclient-4.0-beta2.jar" />
+			<include name="http\httpmime-4.0-beta2.jar" />
+			<include name="http\commons-codec-1.3.jar" />
+			<include name="http\commons-httpclient-3.1.jar" />
+
+			<!-- jms -->
+			<include name="jms\activemq-core-5.2.0.jar" />
+			<include name="jms\geronimo-j2ee-management_1.0_spec-1.0.jar" />
+			<include name="jms\geronimo-jms_1.1_spec-1.1.1.jar" />
+			<include name="jms\mqBean.jar" />
+			
+			<!-- json -->
+			<include name="json\commons-beanutils-1.8.3.jar" />
+			<include name="json\commons-collections-3.2.jar" />
+			<include name="json\commons-lang.jar" />
+			<include name="json\ezmorph-1.0.6.jar" />
+			<include name="json\json-lib-2.4-jdk15.jar" />
+			
+			<!-- alarm -->
+			<include name="alarm\alarm.jar" />
+			
+			<!-- reference -->
+			<include name="db\satota-dao-1.0.jar" />
+			
+		</fileset>
+		<pathelement location="${build.classes.dir}" />
+	</path>
+
+	
+	
+	<!-- =================================================================== -->
+	<!-- Prepares the build directory                                        -->
+	<!-- =================================================================== -->
+	<target name="prepare" depends="clean" description="建立编译临时文件夹">
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${build.classes.dir}" />
+	</target>
+
+	<!-- =================================================================== -->
+	<!-- Compiles the source code                                            -->
+	<!-- =================================================================== -->
+	<target name="compile" depends="prepare" description="编绎">
+		<javac srcdir="${src.dir}" destdir="${build.classes.dir}" debug="on" deprecation="on" optimize="off" includes="com/**">
+			<compilerarg value="-Xlint:unchecked"/> 
+			<classpath>
+				<path refid="build.classpath" />
+				<pathelement location="${api-build}" />
+				<pathelement location="${ant.home}/lib/ant.jar" />
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="pre_jar" depends="compile" description="创建WEB需要的引用包并拷贝到satota项目下">
+		<jar jarfile="${build.dir}\smsc-common.jar" manifest="${app.home.meta}">
+			<fileset dir="${build.classes.dir}">
+				<include name="com/roamingServer/smscgw/util/UniqueWorkID.class" />
+			</fileset>
+		</jar>
+	</target>
+
+	
+
+	<!-- =================================================================== -->
+	<!-- jar the classes code   -->
+	<!-- =================================================================== -->
+	<target name="jar" depends="compile, pre_jar" description="创建发布jar包">
+		<jar jarfile="${build.dir}\smscgw-1.0.jar" manifest="${app.home.meta}">
+			<fileset dir="${build.classes.dir}">
+				<include name="com/**/*.class" />
+			</fileset>
+		</jar>
+	</target>
+
+	<!-- =================================================================== -->
+	<!-- deploy the jar code                                           		 -->
+	<!-- =================================================================== -->
+	<target name="deploy" depends="makeDir" description="部署jar和相关依赖包">
+
+		<copy file="${build.dir}\smscgw-1.0.jar" todir="${server.home.lib}" />
+
+		<copy file="${app.home.lib}\xml\dom4j-1.6.1.jar" todir="${server.home.lib}\xml" />
+		
+		<copy file="${app.home.lib}\wd\DESTool.jar" todir="${server.home.lib}\wd" />
+		
+		<!-- smpp -->
+		<copy file="${app.home.lib}\smpp\smpp.jar" todir="${server.home.lib}\smpp" />
+		<copy file="${app.home.lib}\smpp\xbean.jar" todir="${server.home.lib}\smpp" />
+		<copy file="${app.home.lib}\smpp\SMPPServerConfigXML.jar" todir="${server.home.lib}\smpp" />
+		<copy file="${app.home.lib}\smpp\jsr173_1.0_api.jar" todir="${server.home.lib}\smpp" />
+
+
+		<!-- log4j -->
+		<copy file="${app.home.lib}\log4j\log4j-1.2.14.jar" todir="${server.home.lib}\log4j" />
+		<copy file="${app.home.lib}\log4j\commons-logging-1.1.jar" todir="${server.home.lib}\log4j" />
+
+		<!-- http -->
+		<copy file="${app.home.lib}\http\httpcore-4.0.jar" todir="${server.home.lib}\http" />
+		<copy file="${app.home.lib}\http\httpcore-nio-4.0.jar" todir="${server.home.lib}\http" />
+		<copy file="${app.home.lib}\http\httpclient-4.0-beta2.jar" todir="${server.home.lib}\http" />
+		<copy file="${app.home.lib}\http\httpmime-4.0-beta2.jar" todir="${server.home.lib}\http" />
+		<copy file="${app.home.lib}\http\commons-codec-1.3.jar" todir="${server.home.lib}\http" />
+		<copy file="${app.home.lib}\http\commons-httpclient-3.1.jar" todir="${server.home.lib}\http" />
+		
+		<!-- jms -->
+		<copy file="${app.home.lib}\jms\activemq-core-5.2.0.jar" todir="${server.home.lib}\jms" />
+		<copy file="${app.home.lib}\jms\geronimo-j2ee-management_1.0_spec-1.0.jar" todir="${server.home.lib}\jms" />
+		<copy file="${app.home.lib}\jms\geronimo-jms_1.1_spec-1.1.1.jar" todir="${server.home.lib}\jms" />
+		<copy file="${app.home.lib}\jms\mqBean.jar" todir="${server.home.lib}\jms" />
+		
+		<!-- json -->
+		<copy file="${app.home.lib}\json\commons-beanutils-1.8.3.jar" todir="${server.home.lib}\json" />
+		<copy file="${app.home.lib}\json\commons-collections-3.2.jar" todir="${server.home.lib}\json" />
+		<copy file="${app.home.lib}\json\commons-lang.jar" todir="${server.home.lib}\json" />
+		<copy file="${app.home.lib}\json\ezmorph-1.0.6.jar" todir="${server.home.lib}\json" />
+		<copy file="${app.home.lib}\json\json-lib-2.4-jdk15.jar" todir="${server.home.lib}\json" />
+		
+
+		<copy file="${app.home.lib}\wd\wdcoder-jdk15-1.3.1.jar" todir="${server.home.lib}\wd" />
+		
+		<!-- alarm -->
+		<copy file="${app.home.lib}\alarm\alarm.jar" todir="${server.home.lib}\alarm" />
+		
+		<!-- reference -->
+		<copy file="${app.home.lib}\db\satota-dao-1.0.jar" todir="${server.home.lib}\db" />
+		
+
+		<copy todir="${server.home.bin}" >
+			<fileset dir="${app.home.conf}">
+				<include name="*.bat" />
+				<include name="*.sh" />
+			</fileset>
+		</copy>
+
+		<!-- conf -->
+		<copy todir="${server.home.conf}">
+			<fileset dir="${app.home.conf}">
+				<include name="smppConfig.properties" />
+				<include name="log4j.properties" />
+				<include name="jmsConfig.properties" />
+				<include name="alarm.properties" />
+				<include name="SmscGW.xml" />
+				<include name="*.txt" />
+			</fileset>
+		</copy>
+	</target>
+
+	<!-- =================================================================== -->
+	<!-- runTestSuite                                           			 -->
+	<!-- =================================================================== -->
+	<target name="runTests" depends="compileTestCases" description="运行测试用例">
+		<mkdir dir="${app.home.docs}" />
+		<junit fork="true" dir="${basedir}">
+			<classpath refid="tests.classpath" />
+			<jvmarg value="-Demma.coverage.out.file=${app.home.docs}/coverage.emma" />
+			<jvmarg value="-Demma.coverage.out.merge=true" />
+			<batchtest todir="${app.home.docs}">
+				<fileset dir="${build.classes.dir}">
+					<include name="**/*Test.class" />
+				</fileset>
+			</batchtest>
+			<formatter type="xml" />
+			<assertions>
+				<enable />
+			</assertions>
+		</junit>
+	</target>
+
+	<!-- =================================================================== -->
+	<!-- compileTestCases                                           		 -->
+	<!-- =================================================================== -->
+	<target name="compileTestCases" depends="compile" description="编译测试代码">
+		<mkdir dir="${build.dir}" />
+		<javac srcdir="${test.dir}" destdir="${build.classes.dir}" deprecation="true" debug="true">
+			<classpath refid="tests.classpath" />
+		</javac>
+	</target>
+
+	<!-- =================================================================== -->
+	<!-- mkdir the server archectect                                         -->
+	<!-- =================================================================== -->
+	<target name="makeDir" depends="jar" description="创建运行环境的目录结构">
+		<mkdir dir="${server.home.bin}" />
+		<mkdir dir="${server.home.conf}" />
+		<mkdir dir="${server.home.lib}" />
+		<mkdir dir="${server.home.lib}\smpp" />
+		<mkdir dir="${server.home.lib}\log4j" />
+		<mkdir dir="${server.home.lib}\jms" />
+		<mkdir dir="${server.home.lib}\http" />
+		<mkdir dir="${server.home.lib}\wd" />
+		<mkdir dir="${server.home.lib}\xml" />
+	    <mkdir dir="${server.home.lib}\db" />
+	    <mkdir dir="${server.home.lib}\json" /> 
+		<mkdir dir="${server.home.lib}\alarm" /> 
+		<mkdir dir="${server.home.log}" />
+	</target>
+
+	<!-- =================================================================== -->
+	<!-- Cleans up generated dir and deploied jar                            -->
+	<!-- =================================================================== -->
+	<target name="clean" description="清除编译和部署环境的相关文件">
+		<delete dir="${build.dir}" />
+	</target>
+
+</project>

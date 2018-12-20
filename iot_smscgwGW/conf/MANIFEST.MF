@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Specification-Title: SSP
+Specification-Version: 3.0
+Implementation-Title: SSP
+Implementation-Version: ${releaseNumber}
+Implementation-Vendor: http://www.watchdata.com/
